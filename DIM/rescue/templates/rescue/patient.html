@@ -1,0 +1,4 @@
+<h1>{{ patient.name }}</h1>
+<p>{{ patient.adm_date }}
+{{ patient.address }}</p>
+<a href="{% url 'rescue:address' patient.address.id %}">{{ patient.address.id }}</a>

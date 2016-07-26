@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+    {% for patient in patient_list %}
+        <p> 
+            {{ patient.name }} ({{ patient.id }})
+            <a href="{% url 'rescue:patient_detail' patient.pk %}">detail...</a>
+        </p>
+    {% endfor %}
+
+    <a href="{% url 'rescue:patient_create' %}">Add...</a>
+{% endblock %}

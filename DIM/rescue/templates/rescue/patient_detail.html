@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h2>{{ object.name }} ({{ object.id }})</h2>
+<p><em>address {{ object.address.id }} {{ object.address.line1 }} {{ object.address.line2 }} {{ object.address.postalCode }} {{ object.address.city }} {{ object.address.country }}</em>
+<p>{{ object.adm_date }}</p>
+
+<a href="{% url 'rescue:patient_edit' object.id %}">Edit</a>
+|
+<a href="{% url 'rescue:patient_delete' object.id %}">Delete</a>
+
+{% endblock %}
