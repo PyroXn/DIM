@@ -1,12 +1,27 @@
 {% extends "base.html" %}
 
 {% block content %}
-    {% for patient in patient_list %}
-        <p> 
-            {{ patient.name }} ({{ patient.id }})
-            <a href="{% url 'rescue:patient_detail' patient.pk %}">detail...</a>
-        </p>
-    {% endfor %}
-
+    <div class="table-responsive">
+        <table class="table table-bordered table-hover table-striped tablesorter">
+            <thead>
+                <tr>
+                    <th class="header"> Id <i class="icon-sort"></i></th>
+                    <th class="header"> Name <i class="icon-sort"></i></th>
+                    <th class="header"> Admission <i class="icon-sort"></i></th>
+                    <th class="header"> Detail <i class="icon-sort"></i></th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for patient in patient_list %}
+                    <tr>
+                        <td>{{ patient.id }}</td>
+                        <td>{{ patient.name }}</td>
+                        <td>{{ patient.adm_date }}</td>
+                        <td><a href="{% url 'rescue:patient_detail' patient.pk %}"> Detail</a></td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
     <a href="{% url 'rescue:patient_create' %}">Add...</a>
 {% endblock %}
