@@ -1,1 +1,3 @@
 # DIM
+
+bower install bootstrap
