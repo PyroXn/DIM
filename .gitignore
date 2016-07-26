@@ -1,0 +1,7 @@
+
+/DIM/rescue/static/
+DIM/DIM/__pycache__/
+DIM/rescue/__pycache__/
+DIM/rescue/migrations/__pycache__/
+DIM/rescue/static/
+.idea/
